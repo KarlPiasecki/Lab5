@@ -1,0 +1,93 @@
+/* 
+Lab 5
+Karl Piasecki 0575787
+PHP code to display the inputs from the payment form
+*/
+h1 {
+    margin-top: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 11px solid rgb(184, 179, 179);
+    border-radius: 1em;
+    background-color: bisque; 
+}
+
+div+div {
+    margin-top: 1em;
+}
+
+label span {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+/* Add a custom width for the postal code field*/
+#postal {
+    width:75px;
+}
+
+
+input, textarea, select {
+    font: 1em sans-serif;
+    width: 250px;
+    box-sizing: border-box;
+    border: 3px solid #999;
+}
+
+input[type=checkbox], input[type=radio] {
+    width: auto;
+    border: none;
+}
+
+/* 
+Added styling for the button.
+This gives the button a black border and centers it on the page.
+It also ensures the button doesn't take more space than it requires with the width set to auto
+*/
+input[type=submit] {
+    width: auto;
+    border-color: black;
+    position: relative;
+    left: 50%;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+fieldset {
+    width: 250px;
+    box-sizing: border-box;
+    margin-left: 136px;
+    border: 1px solid #999;
+}
+
+button {
+    margin: 20px 0 0 124px;
+}
+
+label {
+  position: relative;
+}
+
+label em {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+}

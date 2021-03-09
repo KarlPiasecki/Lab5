@@ -1,0 +1,198 @@
+<!-- 
+Lab 5
+Karl Piasecki 0575787
+HTML code for the form input with some modifications to make it work with PHP
+-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Lab 5</title>
+        <link rel="stylesheet" href="payment-form.css">
+    </head>
+    <body>
+        <form action="form.php" method="POST">
+<h1>Payment form</h1>
+<p>Required fields are followed by *.</p>
+    <section>
+        <!--This section is for the contact information-->
+        <h1>Contact information</h1>
+<!--
+The name attribute has been added the elements because it is what PHP uses to return the
+given values 
+-->
+        <fieldset>
+            <legend>Title</legend>
+            <input type="radio" name="title" id="male" value="Mr">Mr<br>
+            <input type="radio" name="title" id="female" value="Ms">Ms<br>
+            <input type="radio" name="title" id="doctor" value="Dr">Dr<br>
+        </fieldset>
+        
+        <p>
+            <label for="name">
+            <span>Name: </span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label for="phone">
+            <span>Phone: </span>
+            </label>
+            <input type="tel" name="phone" id="phone">
+        </p>
+        <p>
+            <label for="email">
+            <span>E-mail: </span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="email" name="email" id="email">
+        </p>
+        <p>
+            <label for="password">
+            <span>Password: </span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="password" id="password">
+        </p>
+    </section>
+
+    <section>
+        <h1>Shipping address</h1>
+        <p>
+            <label for="province">
+            <span>Province:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <select name="shipProvince" id="province">
+                <option value="AB">Alberta</option>
+	            <option value="BC">British Columbia</option>
+	            <option value="MB">Manitoba</option>
+	            <option value="NB">New Brunswick</option>
+	            <option value="NL">Newfoundland and Labrador</option>
+	            <option value="NS">Nova Scotia</option>
+	            <option value="ON">Ontario</option>
+	            <option value="PE">Prince Edward Island</option>
+	            <option value="QC">Quebec</option>
+	            <option value="SK">Saskatchewan</option>
+	            <option value="NT">Northwest Territories</option>
+	            <option value="NU">Nunavut</option>
+	            <option value="YT">Yukon</option>
+            </select>
+        </p>
+        <p>
+            <label for="streetAdd">
+                <span>Street address:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="shipAddress" id="streetAdd">
+        </p>
+        <p>
+            <label for="type">
+                <span>Type:</span>
+                <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <select name="shipType" id="type">
+                    <option value="AP">Apt</option>
+                    <option value="SU">Suite</option>
+                    <option value="UN">Unit</option>
+                </select>
+        </p>
+        <p>
+            <label for="postal">
+                <span>Postal code:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="shipPostal" id="postal">
+        </p>
+    </section>
+    <section>
+        <h1>Billing address</h1>
+            <input type="checkbox" id="same"> <!--this check box saves the user time incase both addresses are the same -->
+            <label for="same">Same as shipping address</label><br>
+        <p>
+            <label for="province">
+            <span>Province:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <select name="billProvince" id="province">
+                <option value="AB">Alberta</option>
+	            <option value="BC">British Columbia</option>
+	            <option value="MB">Manitoba</option>
+	            <option value="NB">New Brunswick</option>
+	            <option value="NL">Newfoundland and Labrador</option>
+	            <option value="NS">Nova Scotia</option>
+	            <option value="ON">Ontario</option>
+	            <option value="PE">Prince Edward Island</option>
+	            <option value="QC">Quebec</option>
+	            <option value="SK">Saskatchewan</option>
+	            <option value="NT">Northwest Territories</option>
+	            <option value="NU">Nunavut</option>
+	            <option value="YT">Yukon</option>
+            </select>
+        </p>
+        <p>
+            <label for="billAdd">
+                <span>Street address:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="billAddress" id="streetAdd">
+        </p>
+        <p>
+            <label for="type">
+                <span>Type:</span>
+                <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <select name="billType" id="type">
+                    <option value="AP">Apt</option>
+                    <option value="SU">Suite</option>
+                    <option value="UN">Unit</option>
+                </select>
+        </p>
+        <p>
+            <label for="postal">
+                <span>Postal code:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="billPostal" id="postal">
+        </p>
+    </section>
+    
+    <section>
+        <h1>Payment information</h1>
+        <p>
+            <label for="card">
+            <span>Card type:</span>
+            <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <select name="card" id="card">
+                <option value="mastercard">Mastercard</option>
+                <option value="visa">Visa</option>
+                <option value="interac">Interac Online</option>
+            </select>
+        </p>
+        <p>
+            <label for="cardNum">
+                <span>Card number:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="tel" name="cardNum" id="cardNum">
+        </p>
+        <p>
+            <label for="expiration">
+                <span>Expiration date:</span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="date" name="expiration" id="expiration">
+        </p>
+        <p><i>formatted as<br>mm/dd/yyyy</i></p>
+    </section>
+    <section>
+        <input type="submit" value="Validate the payment">
+    </section>
+
+  </form>
+    </body>
+
+</html>
+
